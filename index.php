@@ -3,7 +3,7 @@
 	$errors = "";
 
 	// connect to database
-	$db = mysqli_connect("localhost", "DESKTOP-S628HO7\Admin", "", "todo");
+	$db = mysqli_connect("DESKTOP-S628HO7", "Admin", "", "todo");
 
     echo $db;
 
