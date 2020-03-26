@@ -11,10 +11,10 @@
     $username = $url["user"];
     $password = $url["pass"];
     $db = substr($url["path"], 1);
-// echo $url." ".$server." ".$username." ".$password." ".$db;
+
     $conn = new mysqli($server, $username, $password, $db);
 
-    //echo $conn;
+    echo $server.", ".$username.", ".$password.", ".$db;
 
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
