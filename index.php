@@ -2,9 +2,7 @@
 	
 	$errors = "";
 
-	// connect to database DESKTOP-S628HO7
-	//$db = mysqli_connect("DESKTOP-S628HO7", "admin", "admin", "todo") or die("Unable to Connect to DESKTOP-S628HO7\Admin");
-
+	// connect to database heroku DB
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $server = $url["host"];
@@ -13,8 +11,6 @@
     $db = substr($url["path"], 1);
 
     $conn = new mysqli($server, $username, $password, $db);
-
-    //echo $server.", ".$username.", ".$password.", ".$db;
 
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
@@ -40,7 +36,11 @@
 	// select all tasks if page is visited or refreshed
 	$tasks = mysqli_query($conn, "SELECT * FROM tasks");
     
-    echo $tasks;
+    //echo $tasks;
+    while ($taskrow = mysqli_fetch_assoc($tasks))
+    {
+        echo $taskrow;
+    }
 ?>
 <!DOCTYPE html>
 <html>
