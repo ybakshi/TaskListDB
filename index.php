@@ -30,7 +30,8 @@
 
 	// select all tasks if page is visited or refreshed
 	$tasks = mysqli_query($db, "SELECT * FROM tasks");
-
+    
+    echo $tasks;
 ?>
 <!DOCTYPE html>
 <html>
