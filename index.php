@@ -86,7 +86,7 @@
                         <td> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="delete"> 
-                            <a href="index.php?del_task=\"<?php echo $row['task']; ?>\"">x</a>
+                            <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
                     </tr>
 		  <?php $i++; } ?>		
