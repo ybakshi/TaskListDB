@@ -30,6 +30,7 @@
 		$id = $_GET['del_task'];
 
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
+        echo $id;
 		header('location: index.php');
 	}
 
@@ -85,7 +86,7 @@
                         <td> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="delete"> 
-                            <a href="index.php?del_task=<?php echo $row['task']; ?>">x</a> 
+                            <a href="index.php?del_task=\"<?php echo $row['task']; ?>\"">x</a>
                         </td>
                     </tr>
 		  <?php $i++; } ?>		
