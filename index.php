@@ -3,7 +3,7 @@
 	$errors = "";
 
 	// connect to database DESKTOP-S628HO7
-	$db = mysqli_connect("localhost", "admin", "admin", "todo") or die("Unable to Connect to localhost");
+	$db = mysqli_connect("45.112.0.38", "admin", "admin", "todo") or die("Unable to Connect to localhost");
 
     echo $db;
 
