@@ -37,10 +37,10 @@
 	$tasks = mysqli_query($conn, "SELECT * FROM tasks");
     
     //echo $tasks;
-    while ($taskrow = mysqli_fetch_assoc($tasks))
-    {
-        echo $taskrow;
-    }
+//    while ($taskrow = mysqli_fetch_assoc($tasks))
+//    {
+//        echo $taskrow;
+//    }
 ?>
 <!DOCTYPE html>
 <html>
