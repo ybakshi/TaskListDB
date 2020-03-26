@@ -5,6 +5,8 @@
 	// connect to database
 	$db = mysqli_connect("localhost", "DESKTOP-S628HO7\Admin", "", "todo");
 
+    echo $db;
+
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
 
