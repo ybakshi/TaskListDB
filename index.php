@@ -3,8 +3,8 @@
 	$errors = "";
 
 	// connect to database
-	$db = mysqli_connect("DESKTOP-S628HO7", "admin", "admin", "todo");
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	$db = mysqli_connect("DESKTOP-S628HO7", "admin", "admin", "todo") die("Unable to Connect to DESKTOP-S628HO7");
+
     echo $db;
 
 	// insert a quote if submit button is clicked
