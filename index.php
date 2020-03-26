@@ -14,7 +14,7 @@
 
     $conn = new mysqli($server, $username, $password, $db);
 
-    echo $server.", ".$username.", ".$password.", ".$db;
+    //echo $server.", ".$username.", ".$password.", ".$db;
 
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
@@ -24,7 +24,7 @@
 		}else{
 			$task = $_POST['task'];
 			$query = "INSERT INTO tasks (task) VALUES ('$task')";
-			mysqli_query($db, $query);
+			mysqli_query($conn, $query);
 			header('location: index.php');
 		}
 	}	
@@ -33,12 +33,12 @@
 	if (isset($_GET['del_task'])) {
 		$id = $_GET['del_task'];
 
-		mysqli_query($db, "DELETE FROM tasks WHERE id=".$id);
+		mysqli_query($conn, "DELETE FROM tasks WHERE id=".$id);
 		header('location: index.php');
 	}
 
 	// select all tasks if page is visited or refreshed
-	$tasks = mysqli_query($db, "SELECT * FROM tasks");
+	$tasks = mysqli_query($conn, "SELECT * FROM tasks");
     
     echo $tasks;
 ?>
