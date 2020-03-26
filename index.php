@@ -14,7 +14,7 @@
 // echo $url." ".$server." ".$username." ".$password." ".$db;
     $conn = new mysqli($server, $username, $password, $db);
 
-    echo $conn;
+    //echo $conn;
 
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
