@@ -4,7 +4,7 @@
 
 	// connect to database
 	$db = mysqli_connect("DESKTOP-S628HO7", "Admin", "", "todo");
-
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
     echo $db;
 
 	// insert a quote if submit button is clicked
