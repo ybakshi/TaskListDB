@@ -29,7 +29,7 @@
 	if (isset($_GET['del_task'])) {
 		$id = $_GET['del_task'];
 
-		mysqli_query($conn, "DELETE FROM tasks WHERE id=".$id);
+		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
 		header('location: index.php');
 	}
 
