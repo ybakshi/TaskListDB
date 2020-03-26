@@ -2,8 +2,8 @@
 	
 	$errors = "";
 
-	// connect to database
-	$db = mysqli_connect("DESKTOP-S628HO7", "admin", "admin", "todo") or die("Unable to Connect to DESKTOP-S628HO7");
+	// connect to database DESKTOP-S628HO7
+	$db = mysqli_connect("localhost", "admin", "admin", "todo") or die("Unable to Connect to DESKTOP-S628HO7");
 
     echo $db;
 
