@@ -3,9 +3,18 @@
 	$errors = "";
 
 	// connect to database DESKTOP-S628HO7
-	$db = mysqli_connect("DESKTOP-S628HO7", "admin", "admin", "todo") or die("Unable to Connect to DESKTOP-S628HO7\Admin");
+	//$db = mysqli_connect("DESKTOP-S628HO7", "admin", "admin", "todo") or die("Unable to Connect to DESKTOP-S628HO7\Admin");
 
-    echo $db;
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+
+    $conn = new mysqli($server, $username, $password, $db);
+
+    echo $conn;
 
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
