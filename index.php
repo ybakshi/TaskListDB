@@ -94,7 +94,13 @@
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $task_done; ?>">
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>"<?php
+                                if($video == '1'){
+                                     echo "checked='checked'";
+                                }
+                                else {}
+                                echo "/>"
+                                ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
                     </tr>
