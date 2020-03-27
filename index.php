@@ -20,7 +20,8 @@
 		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-			$query = "INSERT INTO tasks (task,Owner) VALUES ('$task','$Owner')";
+            $task_done = $_POST['task_done'];
+			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','$task_done')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 		}
@@ -35,14 +36,15 @@
 		header('location: index.php');
 	}
 
-	// select all tasks if page is visited or refreshed
-	$tasks = mysqli_query($conn, "SELECT * FROM tasks");
-    
-    //echo $tasks;
-//    while ($taskrow = mysqli_fetch_assoc($tasks))
-//    {
-//        echo $taskrow;
+//    if (isset($_GET['task_done'])) {
+//		$task_done = $_GET['task_done'];
 //    }
+
+    //echo $tasks;
+    //while ($taskrow = mysqli_fetch_assoc($tasks))
+    //{
+    //    echo $taskrow;
+    //}
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +94,7 @@
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="task_done">
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $task_done; ?>">
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
                     </tr>
