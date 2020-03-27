@@ -100,7 +100,7 @@ echo "taskdone=".$task_done;
                                 echo "/>"
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $row['task_done']; ?>'">Update</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'%26task_done='<?php echo $row['task_done']; ?>'">Update</a>
                         </td>
                     </tr>
 
