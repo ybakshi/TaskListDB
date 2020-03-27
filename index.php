@@ -19,7 +19,7 @@
 			$errors = "You must fill in the task";
 		}else{
 			$task = $_POST['task'];
-			$query = "INSERT INTO tasks (task) VALUES ('$task')";
+			$query = "INSERT INTO tasks (task,owner) VALUES ('$task','$owner')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 		}
@@ -72,6 +72,7 @@
 			<tr>
 				<th>N</th>
 				<th>Tasks</th>
+                <th>Owner</th>
 				<th style="width: 60px;">Action</th>
 			</tr>
 		</thead>
@@ -85,6 +86,7 @@
                     <tr>
                         <td> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
+                        <td class="owner"> <?php echo $row['owner']; ?> </td>
                         <td class="delete"> 
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
