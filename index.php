@@ -26,21 +26,29 @@
 //		}
 	}	
 
-    if (isset($_POST['update'])){
-        $task_done = $_POST['task_done'];
-        if ($task_done != 1){
-            $task_done = 0;
-        }
-        $query1 = "UPDATE tasks SET task_done='$task_done' WHERE task='$task'";
-        mysqli_query($conn, $query1);
-        header('location: index.php');
-    }
+//    if (isset($_POST['update'])){
+//        $task_done = $_POST['task_done'];
+//        if ($task_done != 1){
+//            $task_done = 0;
+//        }
+//        $query1 = "UPDATE tasks SET task_done='$task_done' WHERE task='$task'";
+//        mysqli_query($conn, $query1);
+//        header('location: index.php');
+//    }
 
 	// delete task
 	if (isset($_GET['del_task'])) {
 		$id = $_GET['del_task'];
 
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
+        header('location: index.php');
+	}
+
+    // Update task
+	if (isset($_GET['task_done'])) {
+		$task_done = $_GET['task_done'];
+        $updt_task = $_GET['upd_task'];
+		mysqli_query($conn, "UPDATE tasks SET task_done='$task_done' WHERE task='$updt_task'");
         header('location: index.php');
 	}
 
@@ -97,7 +105,7 @@
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
 
                 $i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
-                    <form method="post" action="index.php" class="input_form">
+<!--                    <form method="post" action="index.php" class="input_form">-->
                     <tr>
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
@@ -111,10 +119,11 @@
                                 echo "/>"
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                            <button type="update" name="update" id="upd_btn" class="add_btn">Update</button>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'"&task_done='<?php echo $row['task_done']; ?>'">Update</a>
+<!--                            <button type="update" name="update" id="upd_btn" class="add_btn">Update</button>-->
                         </td>
                     </tr>
-                    <form method="post" action="index.php" class="input_form">
+<!--                    <form method="post" action="index.php" class="input_form">-->
 		  <?php $i++; } ?>		
 		</tbody>
 	</table>
