@@ -95,7 +95,7 @@
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="delete"> 
                             <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>"<?php
-                                if($task_done == '1'){
+                                if($row['task_done'] == '1'){
                                      echo "checked='checked'";
                                 }
                                 else {}
