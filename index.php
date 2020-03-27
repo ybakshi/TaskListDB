@@ -100,7 +100,7 @@
                                 }
                                 else {}
                                 echo "/>"
-                                ?>>
+                                ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
                     </tr>
