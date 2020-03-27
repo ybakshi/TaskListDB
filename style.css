@@ -21,18 +21,18 @@ form p {
 }
 .task_input {
 	width: 50%;
-	height: 15px; 
+	height: auto; 
 	padding: 10px;
 	border: 2px solid #6B8E23;
 }
 .Onwer_input {
 	width: 25%;
-	height: 15px; 
+	height: auto; 
 	padding: 10px;
 	border: 2px solid #6B8E23;
 }
 .add_btn {
-	height: 39px;
+	height: auto;
 	background: #FFF8DC;
 	color: 	#6B8E23;
 	border: 2px solid #6B8E23;
@@ -57,7 +57,7 @@ th {
 
 th, td{
 	border: none;
-    height: 30px;
+    height: auto;
     padding: 2px;
 }
 
@@ -76,7 +76,7 @@ tr:hover {
 }
 .delete{
 	text-align: center;
-    width: 20%;
+    width: 10%;
 }
 .delete a{
 	color: white;
