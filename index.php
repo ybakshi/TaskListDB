@@ -92,6 +92,7 @@
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="delete"> 
+                            <input type="checkbox" id="task_done" name="task_done" value="task_done">
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
                     </tr>
