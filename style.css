@@ -20,7 +20,13 @@ form p {
 	margin: 0px;
 }
 .task_input {
-	width: 75%;
+	width: 50%;
+	height: 15px; 
+	padding: 10px;
+	border: 2px solid #6B8E23;
+}
+.Onwer_input {
+	width: 25%;
 	height: 15px; 
 	padding: 10px;
 	border: 2px solid #6B8E23;
@@ -61,10 +67,16 @@ tr:hover {
 
 .task {
 	text-align: left;
+    width: 50%;
 }
 
+.Owner {
+	text-align: left;
+    width: 20%;
+}
 .delete{
 	text-align: center;
+    width: 20%;
 }
 .delete a{
 	color: white;

@@ -64,7 +64,7 @@
 			<p><?php echo $errors; ?></p>
 		<?php } ?>
 		<input type="text" name="task" class="task_input">
-        <input type="text" name="Owner" class="task_input">
+        <input type="text" name="Owner" class="Owner_input">
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 	</form>
 
@@ -72,10 +72,10 @@
 	<table>
 		<thead>
 			<tr>
-				<th>N</th>
-				<th>Tasks</th>
-                <th>Owner</th>
-				<th style="width: 60px;">Action</th>
+				<th style="width: 10%; text-align: left;">N</th>
+				<th style="width: 50%; text-align: left;">Tasks</th>
+                <th style="width: 20%; text-align: left;">Owner</th>
+				<th style="width: 20%;text-align: left;">Action</th>
 			</tr>
 		</thead>
 
@@ -86,9 +86,9 @@
 
                 $i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
                     <tr>
-                        <td> <?php echo $i; ?> </td>
+                        <td style="width: 10%;text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
-                        <td class="task"> <?php echo $row['Owner']; ?> </td>
+                        <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="delete"> 
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                         </td>
