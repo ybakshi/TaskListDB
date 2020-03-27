@@ -21,15 +21,15 @@ form p {
 }
 .task_input {
 	width: 50%;
-	height: auto; 
-	padding: 10px;
-	border: 2px solid #6B8E23;
+	height: 10px; 
+	padding: 5px;
+	border: 1px solid #6B8E23;
 }
 .Onwer_input {
 	width: 25%;
-	height: auto; 
-	padding: 10px;
-	border: 2px solid #6B8E23;
+	height: 10px; 
+	padding: 5px;
+	border: 1px solid #6B8E23;
 }
 .add_btn {
 	height: auto;
