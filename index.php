@@ -77,7 +77,7 @@
 				<th style="width: 10%; text-align: left;">N</th>
 				<th style="width: 50%; text-align: left;">Tasks</th>
                 <th style="width: 20%; text-align: left;">Owner</th>
-				<th style="width: 20%; text-align: left;">Action</th>
+				<th style="width: 20%; text-align: center;">Action</th>
 			</tr>
 		</thead>
 
