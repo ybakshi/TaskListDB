@@ -35,11 +35,11 @@
 	}
 echo "taskdone=".$task_done;
     // Update task
-	if (isset($_GET['task_done'])) {
+	if (isset($_GET['upd_task'])) {
 		$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         echo "taskdone=".$task_done;
-		mysqli_query($conn, "UPDATE tasks SET task_done='$task_done' WHERE task=$updt_task");
+		mysqli_query($conn, "UPDATE tasks SET task_done='1' WHERE task=$updt_task");
         header('location: index.php');
 	}
 
@@ -100,7 +100,7 @@ echo "taskdone=".$task_done;
                                 echo "/>"
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'%26task_done='<?php echo $row['task_done']; ?>'">Update</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
                     </tr>
 
