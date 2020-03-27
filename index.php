@@ -20,7 +20,7 @@
 //		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner',0)";
+			$query = "INSERT INTO tasks (task,Owner) VALUES ('$task','$Owner')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 //		}
