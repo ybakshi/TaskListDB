@@ -78,7 +78,7 @@
         <label for="Owner_label">Owner:</label>
         <input type="text" name="Owner" class="Owner_input">
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
-	
+	</form>
 
 
 	<table>
@@ -97,6 +97,7 @@
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
 
                 $i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
+                    <form method="post" action="index.php" class="input_form">
                     <tr>
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
@@ -110,11 +111,12 @@
                                 echo "/>"
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
+                            <button type="submit" name="update" id="upd_btn" class="add_btn">Update</button>
                         </td>
                     </tr>
+                    <form method="post" action="index.php" class="input_form">
 		  <?php $i++; } ?>		
 		</tbody>
 	</table>
-</form>
 </body>
 </html>
