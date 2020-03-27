@@ -21,6 +21,7 @@
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
             $task_done = $_POST['task_done'];
+        echo $task_done;
 			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','$task_done')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
