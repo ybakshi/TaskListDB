@@ -20,13 +20,13 @@
 //		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','$task_done')";
+			$query = "INSERT INTO tasks (task,Owner) VALUES ('$task','$Owner')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 //		}
             $task_done = isset($_POST['task_done'])? '1' : '0';
-            $query = "UPDATE tasks SET task_done='$task_done'' WHERE task='$task'";
-            mysqli_query($conn, $query);
+            $query1 = "UPDATE tasks SET task_done='$task_done'' WHERE task='$task'";
+            mysqli_query($conn, $query1);
             header('location: index.php');
 	}	
 
