@@ -15,16 +15,16 @@
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
 
-		if (empty($_POST['task'])) {
-			$errors = "You must fill in the task";
-		}else{
+//		if (empty($_POST['task'])) {
+//			$errors = "You must fill in the task";
+//		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
             $task_done = $_POST['task_done'];
 			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','$task_done')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
-		}
+//		}
 	}	
 
 	// delete task
