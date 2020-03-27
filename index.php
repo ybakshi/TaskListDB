@@ -15,26 +15,16 @@
 	// insert a quote if submit button is clicked
 	if (isset($_POST['submit'])) {
 
-//		if (empty($_POST['task'])) {
-//			$errors = "You must fill in the task";
-//		}else{
+		if (empty($_POST['task'])) {
+			$errors = "You must fill in the task";
+		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
 			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner',0)";
 			mysqli_query($conn, $query);
 			header('location: index.php');
-//		}
+		}
 	}	
-
-//    if (isset($_POST['update'])){
-//        $task_done = $_POST['task_done'];
-//        if ($task_done != 1){
-//            $task_done = 0;
-//        }
-//        $query1 = "UPDATE tasks SET task_done='$task_done' WHERE task='$task'";
-//        mysqli_query($conn, $query1);
-//        header('location: index.php');
-//    }
 
 	// delete task
 	if (isset($_GET['del_task'])) {
@@ -53,15 +43,6 @@ echo "taskdone=".$task_done;
         header('location: index.php');
 	}
 
-//    if (isset($_GET['task_done'])) {
-//		$task_done = $_GET['task_done'];
-//    }
-
-    //echo $tasks;
-    //while ($taskrow = mysqli_fetch_assoc($tasks))
-    //{
-    //    echo $taskrow;
-    //}
 ?>
 <!DOCTYPE html>
 <html>
@@ -106,7 +87,6 @@ echo "taskdone=".$task_done;
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
 
                 $i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
-<!--                    <form method="post" action="index.php" class="input_form">-->
                     <tr>
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
@@ -121,10 +101,9 @@ echo "taskdone=".$task_done;
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $row['task_done']; ?>'">Update</a>
-<!--                            <button type="update" name="update" id="upd_btn" class="add_btn">Update</button>-->
                         </td>
                     </tr>
-<!--                    <form method="post" action="index.php" class="input_form">-->
+
 		  <?php $i++; } ?>		
 		</tbody>
 	</table>
