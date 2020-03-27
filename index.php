@@ -20,13 +20,13 @@
 //		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-			$query = "INSERT INTO tasks (task,Owner) VALUES ('$task','$Owner')";
+			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner',0)";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 //		}
 	}	
 
-    if (isset($_POST['task_done'])){
+    if (isset($_POST['update'])){
         $task_done = $_POST['task_done'];
         if ($task_done != 1){
             $task_done = 0;
@@ -111,7 +111,7 @@
                                 echo "/>"
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                            <button type="submit" name="update" id="upd_btn" class="add_btn">Update</button>
+                            <button type="update" name="update" id="upd_btn" class="add_btn">Update</button>
                         </td>
                     </tr>
                     <form method="post" action="index.php" class="input_form">
