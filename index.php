@@ -20,15 +20,18 @@
 //		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-			$query = "INSERT INTO tasks (task,Owner) VALUES ('$task','$Owner')";
+			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','0')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 //		}
-            $task_done = isset($_POST['task_done'])? '1' : '0';
-            $query1 = "UPDATE tasks SET task_done='$task_done'' WHERE task='$task'";
-            mysqli_query($conn, $query1);
-            header('location: index.php');
 	}	
+
+    if (isset($_POST['task_done'])){
+        $task_done = $_POST['task_done'];
+        $query1 = "UPDATE tasks SET task_done='$task_done' WHERE task='$task'";
+        mysqli_query($conn, $query1);
+        header('location: index.php');
+    }
 
 	// delete task
 	if (isset($_GET['del_task'])) {
@@ -98,7 +101,7 @@
                         <td class="delete"> 
                             <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>"<?php
                                 if($row['task_done'] == '1'){
-                                     echo "checked='checked'";
+                                     echo " checked='checked'";
                                 }
                                 else {}
                                 echo "/>"
