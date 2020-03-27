@@ -48,7 +48,7 @@
 	if (isset($_GET['task_done'])) {
 		$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
-		mysqli_query($conn, "UPDATE tasks SET task_done='$task_done' WHERE task='$updt_task'");
+		mysqli_query($conn, "UPDATE tasks SET task_done='$task_done' WHERE task=$updt_task");
         header('location: index.php');
 	}
 
