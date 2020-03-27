@@ -20,7 +20,7 @@
 //		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','0')";
+			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner',0)";
 			mysqli_query($conn, $query);
 			header('location: index.php');
 //		}
@@ -28,6 +28,9 @@
 
     if (isset($_POST['task_done'])){
         $task_done = $_POST['task_done'];
+        if ($task_done != 1){
+            $task_done = 0;
+        }
         $query1 = "UPDATE tasks SET task_done='$task_done' WHERE task='$task'";
         mysqli_query($conn, $query1);
         header('location: index.php');
