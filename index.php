@@ -72,7 +72,7 @@
         <label for="Owner_label">Owner:</label>
         <input type="text" name="Owner" class="Owner_input">
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
-	</form>
+	
 
 
 	<table>
@@ -109,6 +109,6 @@
 		  <?php $i++; } ?>		
 		</tbody>
 	</table>
-
+</form>
 </body>
 </html>
