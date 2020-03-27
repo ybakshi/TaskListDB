@@ -119,7 +119,7 @@
                                 echo "/>"
                                 ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'"&task_done='<?php echo $row['task_done']; ?>'">Update</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $row['task_done']; ?>'">Update</a>
 <!--                            <button type="update" name="update" id="upd_btn" class="add_btn">Update</button>-->
                         </td>
                     </tr>
