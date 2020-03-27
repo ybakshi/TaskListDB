@@ -21,7 +21,7 @@
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
             $task_done = isset($_POST['task_done'])? '1' : '0';
-        echo $task_done;
+        echo "task-done=".$task_done;
 			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','$task_done')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
@@ -33,8 +33,7 @@
 		$id = $_GET['del_task'];
 
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
-        echo $id;
-		header('location: index.php');
+        header('location: index.php');
 	}
 
 //    if (isset($_GET['task_done'])) {
