@@ -19,6 +19,7 @@
 			$errors = "You must fill in the task";
 		}else{
 			$task = $_POST['task'];
+            $owner = $_POST['owner'];
 			$query = "INSERT INTO tasks (task,owner) VALUES ('$task','$owner')";
 			mysqli_query($conn, $query);
 			header('location: index.php');
