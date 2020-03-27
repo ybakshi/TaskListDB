@@ -20,7 +20,7 @@
 //		}else{
 			$task = $_POST['task'];
             $Owner = $_POST['Owner'];
-            $task_done = $_POST['task_done'];
+            $task_done = isset($_POST['task_done'])? '1' : '0';
         echo $task_done;
 			$query = "INSERT INTO tasks (task,Owner,task_done) VALUES ('$task','$Owner','$task_done')";
 			mysqli_query($conn, $query);
