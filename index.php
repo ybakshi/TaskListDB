@@ -29,19 +29,16 @@
 	// delete task
 	if (isset($_GET['del_task'])) {
 		$id = $_GET['del_task'];
-
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-        $todaydate = date("d-m-Y");
-        $sqlDate = date('d-m-Y', strtotime($todaydate));
-        echo "today=".$todaydate."date=".$sqlDate;
+        
     // Update task
 	if (isset($_GET['upd_task'])) {
-		//$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
-        
-        mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC='".$sqlDate."' WHERE task=$updt_task");
+        $todaydate = date("d-m-Y");
+        $sqlDate = date('d-m-Y', strtotime($todaydate));
+        mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC=$sqlDate WHERE task=$updt_task");
         header('location: index.php');
 	}  
 
