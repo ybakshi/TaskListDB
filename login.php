@@ -1,4 +1,5 @@
 <?php
+session_start();
 $message="";
 
 // connect to database heroku DB
@@ -18,6 +19,8 @@ if(count($_POST)>0) {
 		$message = "Invalid Username or Password!";
 	} else {
 		$message = "You are successfully authenticated!";
+        // Set session variables
+        $_SESSION["user"] = "auth";
         header('location: index.php');
 	}
 }
