@@ -4,7 +4,13 @@
     if (empty($_POST['userName'])) {
         header("Location: login.php");
         exit();
+    }else{
+        if ($_POST['userName'] != 'admin'){
+            header("Location: login.php");
+            exit();
+        }
     }
+
 
 	$errors = "";
 
