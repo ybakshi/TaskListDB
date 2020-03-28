@@ -20,7 +20,7 @@ if(count($_POST)>0) {
         exit();
 	} else {
 		$message = "You are successfully authenticated!";
-        $_POST["session"]="4104410409";
+        $_POST['session']='4104410409';
         header('location: index.php');
 	}
 }
