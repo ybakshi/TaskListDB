@@ -16,7 +16,7 @@
 //    }
 
         if (isset($_POST['userName'])){
-            if (strcmp($_POST['userName'],"admin") != 0) {
+            if (strcmp($_POST['userName'],"admin") !== 0) {
                 header("Location: login.php");
                 exit();
             }
