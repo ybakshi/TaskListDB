@@ -74,7 +74,8 @@
 			<tr>
 				<th style="width: 10%; text-align: left;">N</th>
 				<th style="width: 50%; text-align: left;">Tasks</th>
-                <th style="width: 20%; text-align: left;">Owner</th>
+                <th style="width: 10%; text-align: left;">Owner</th>
+                <th style="width: 10%; text-align: left;">DoC</th>
 				<th style="width: 20%; text-align: center;">Action</th>
 			</tr>
 		</thead>
@@ -89,6 +90,7 @@
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
+                        <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                         <td class="delete"> 
                             <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>"<?php
                                 if($row['task_done'] == '1'){
