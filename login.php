@@ -1,7 +1,8 @@
 <?php
 $message="";
 
-// connect to database heroku DB
+if(count($_POST)>0) {
+    // connect to database heroku DB
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $server = $url["host"];
@@ -10,8 +11,6 @@ $message="";
     $db = substr($url["path"], 1);
 
     $conn = new mysqli($server, $username, $password, $db);
-
-if(count($_POST)>0) {
 	//$conn = mysqli_connect("localhost","root","","phppot_examples");
 	$result = mysqli_query($conn,"SELECT * FROM users WHERE user_name='" . $_POST["userName"] . "' and password = '". $_POST["password"]."'");
 	$count  = mysqli_num_rows($result);
