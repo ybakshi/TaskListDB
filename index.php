@@ -33,13 +33,13 @@
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-//echo "taskdone=".$task_done;
+
     // Update task
 	if (isset($_GET['upd_task'])) {
 		$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         echo "taskdone=".$task_done;
-		mysqli_query($conn, "UPDATE tasks SET task_done='1' WHERE task=$updt_task");
+		mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC=".date(d/m/Y)." WHERE task=$updt_task");
         header('location: index.php');
 	}
 
@@ -58,7 +58,6 @@
 		<h2 style="font-style: 'Hervetica';">ToDo List Application PHP and MySQL database</h2>
 	</div>
 
-
 	<form method="post" action="index.php" class="input_form">
 		<?php if (isset($errors)) { ?>
 			<p><?php echo $errors; ?></p>
@@ -69,7 +68,6 @@
         <input type="text" name="Owner" class="Owner_input">
 		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 	</form>
-
 
 	<table>
 		<thead>
@@ -103,7 +101,6 @@
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
                     </tr>
-
 		  <?php $i++; } ?>		
 		</tbody>
 	</table>
