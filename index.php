@@ -1,11 +1,11 @@
 <?php 
 	
     //Check for login first
-    if (empty($_POST['userName'])) {
+    if (empty($_POST['session'])) {
         header("Location: login.php");
         exit();
     }else{
-        if ($_POST['userName'] != 'admin'){
+        if ($_POST['session'] != '4104410409'){
             header("Location: login.php");
             exit();
         }

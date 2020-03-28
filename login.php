@@ -20,6 +20,7 @@ if(count($_POST)>0) {
         exit();
 	} else {
 		$message = "You are successfully authenticated!";
+        $_POST["session"]="4104410409";
         header('location: index.php');
 	}
 }
@@ -32,6 +33,7 @@ if(count($_POST)>0) {
 <body>
 <form name="frmUser" method="post" action="index.php">
 	<div class="message"><?php if($message!="") { echo $message; } ?></div>
+        <p></p><h4>Login to Brainizen Task List</h4></p><br><br>
 		<table border="0" cellpadding="10" cellspacing="1" width="500" align="center" class="tblLogin">
 			<tr class="tableheader">
 			<td align="center" colspan="2">Enter Login Details</td>
@@ -46,6 +48,10 @@ if(count($_POST)>0) {
 			</tr>
 			<tr class="tableheader">
 			<td align="center" colspan="2"><input type="submit" name="submit" value="Submit" class="btnSubmit"></td>
+			</tr>
+            <tr class="tablerow">
+			<td>
+			<input type="hidden" id="session" name="session" value=""></td>
 			</tr>
 		</table>
 </form>
