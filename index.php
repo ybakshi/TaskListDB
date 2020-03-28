@@ -36,7 +36,7 @@
 
     // Update task
 	if (isset($_GET['upd_task'])) {
-		$task_done = $_GET['task_done'];
+		//$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         $todaydate = date("d-m-Y");
         $sqlDate = date('d-m-Y', strtotime($todaydate));
