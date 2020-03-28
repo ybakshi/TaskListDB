@@ -39,7 +39,7 @@
 		$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         echo "taskdone=".$task_done;
-		mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC=".date(d/m/Y)." WHERE task=$updt_task");
+		mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC=".date("d/m/Y")." WHERE task=$updt_task");
         header('location: index.php');
 	}
 
