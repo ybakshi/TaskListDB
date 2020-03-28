@@ -3,19 +3,13 @@
     echo $_SERVER['PHP_SELF'];
 
     //Check for login first
-//    if (not from index.php){
-//        if (empty($_POST['userName'])) {
-//            header("Location: login.php");
-//            exit();
-//    }else{
-//        if ($_POST['userName'] == '4104410409'){
-//
-//        }
-//    }
-//    }
+    if (strpos($_SERVER['HTTP_REFERER'], $_SERVER['PHP_SELF'] == false){
+        if (!empty($_POST['userName']) and $_POST['userName'] !== "admin") {
+            header("Location: login.php");
+            exit();
+        }
+    }
     
-
-
 	$errors = "";
 
 	// connect to database heroku DB

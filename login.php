@@ -1,8 +1,6 @@
 <?php
 $message="";
 
-echo $_SERVER['PHP_SELF'];
-
 // connect to database heroku DB
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
@@ -22,7 +20,6 @@ if(count($_POST)>0) {
         exit();
 	} else {
 		$message = "You are successfully authenticated!";
-        $_POST['userName']='4104410409';
         header('location: index.php');
 	}
 }
