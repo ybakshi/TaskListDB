@@ -1,6 +1,4 @@
 <?php 
-	
-    echo $_SERVER['PHP_SELF'];
 
     //Check for login first
     if (strpos($_SERVER['HTTP_REFERER'], $_SERVER['PHP_SELF']) == false){
