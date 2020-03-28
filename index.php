@@ -1,5 +1,10 @@
 <?php 
 	
+if (empty($_GET['authDone'])) {
+    header("Location: login.php");
+    exit();
+}
+
 	$errors = "";
 
 	// connect to database heroku DB

@@ -19,7 +19,7 @@ if(count($_POST)>0) {
 		$message = "Invalid Username or Password!";
 	} else {
 		$message = "You are successfully authenticated!";
-        header('location: index.php');
+        header('location: index.php?authDone=1');
 	}
 }
 ?>
