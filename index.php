@@ -40,6 +40,7 @@
         $updt_task = $_GET['upd_task'];
         $todaydate = date("d-m-Y");
         $sqlDate = date('d-m-Y', strtotime($todaydate));
+        echo "today=".$todaydate."date=".$sqlDate;
         mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC='".$sqlDate."' WHERE task=$updt_task");
         header('location: index.php');
 	}  
