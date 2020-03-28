@@ -19,7 +19,7 @@ if(count($_POST)>0) {
 		$message = "Invalid Username or Password!";
 	} else {
 		$message = "You are successfully authenticated!";
-        header('location: index.php?authDone=1');
+        header('location: index.php');
 	}
 }
 ?>
@@ -29,7 +29,7 @@ if(count($_POST)>0) {
 <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-<form name="frmUser" method="post" action="">
+<form name="frmUser" method="post" action="index.php">
 	<div class="message"><?php if($message!="") { echo $message; } ?></div>
 		<table border="0" cellpadding="10" cellspacing="1" width="500" align="center" class="tblLogin">
 			<tr class="tableheader">

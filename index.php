@@ -1,9 +1,10 @@
 <?php 
 	
-if (empty($_GET['authDone'])) {
-    header("Location: login.php");
-    exit();
-}
+    //Check for login first
+    if (empty($_POST['userName'])) {
+        header("Location: login.php");
+        exit();
+    }
 
 	$errors = "";
 
