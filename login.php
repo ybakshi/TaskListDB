@@ -1,6 +1,8 @@
 <?php
 $message="";
 
+echo $_SERVER['PHP_SELF'];
+
 // connect to database heroku DB
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 

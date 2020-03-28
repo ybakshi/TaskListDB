@@ -1,15 +1,19 @@
 <?php 
 	
+    echo $_SERVER['PHP_SELF'];
+
     //Check for login first
-    if (empty($_POST['userName'])) {
-        header("Location: login.php");
-        exit();
-    }else{
-        if ($_POST['userName'] == '4104410409'){
+//    if (not from index.php){
+//        if (empty($_POST['userName'])) {
 //            header("Location: login.php");
 //            exit();
-        }
-    }
+//    }else{
+//        if ($_POST['userName'] == '4104410409'){
+//
+//        }
+//    }
+//    }
+    
 
 
 	$errors = "";
