@@ -56,7 +56,7 @@ th {
 }
 
 th, td{
-	border: none;
+	border: 1px solid #cbcbcb;
     height: auto;
     padding: 2px;
 }
