@@ -38,10 +38,11 @@
 	if (isset($_GET['upd_task'])) {
 		$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
-        echo "taskdone=".$task_done;
-		mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC=".date("d/m/Y")." WHERE task=$updt_task");
+        $todaydate = date("d-m-Y");
+        $sqlDate = date('d-m-Y', strtotime($todaydate));
+        mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC='$sqlDate' WHERE task='$updt_task'");
         header('location: index.php');
-	}
+	}  
 
 ?>
 <!DOCTYPE html>
