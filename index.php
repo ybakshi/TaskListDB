@@ -1,8 +1,8 @@
 <?php 
 
     //Check for login first
-    if (strpos($_SERVER['HTTP_REFERER'], $_SERVER['PHP_SELF']) == false){
-        if (!empty($_POST['userName']) and $_POST['userName'] !== "admin") {
+    if (strpos($_SERVER['HTTP_REFERER'], $_SERVER['PHP_SELF'],1) == false){
+        if (strcmp($_POST['userName'],$_POST['userName']) != 0) {
             header("Location: login.php");
             exit();
         }
