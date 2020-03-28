@@ -33,7 +33,7 @@ if(count($_POST)>0) {
 <body>
 <form name="frmUser" method="post" action="index.php">
 	<div class="message"><?php if($message!="") { echo $message; } ?></div>
-        <p></p><h4>Login to Brainizen Task List</h4></p><br><br>
+        <p></p><h3 style="text-align: center;"> Login to Brainizen Task List</h3></p><br><br>
 		<table border="0" cellpadding="10" cellspacing="1" width="500" align="center" class="tblLogin">
 			<tr class="tableheader">
 			<td align="center" colspan="2">Enter Login Details</td>
