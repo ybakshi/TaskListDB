@@ -64,7 +64,7 @@
 		<h2 style="font-style: 'Hervetica';">Welcome to Brainizen Task List Board!</h2>
 	</div>
 
-	<form method="post" action="index.php" class="input_form">
+	<form method="post" action="index.php" class="input_form" style="align-content: center;">
 		<?php if (isset($errors)) { ?>
 			<p><?php echo $errors; ?></p>
 		<?php } ?>
