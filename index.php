@@ -1,20 +1,7 @@
 <?php 
     session_start();
-    //Check for login first
-//    if (strpos($_SERVER['HTTP_REFERER'], $_SERVER['PHP_SELF'],1) == false){
-//        if (isset($_POST['userName'])){
-//            if (strcmp($_POST['userName'],"admin") != 0) {
-//                header("Location: login.php");
-//                exit();
-//            }
-//        }else{
-//            header("Location: login.php");
-//            exit();
-//        }
-//    }else{
-//        
-//    }
-
+    
+    //See if the user is valid
     if (strcmp($_SESSION["user"], "auth") !== 0) {
         header("Location: login.php");
         exit();
