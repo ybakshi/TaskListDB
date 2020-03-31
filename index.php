@@ -39,10 +39,10 @@
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-
+echo $_GET['task_done'];
     // Update task
 	if (isset($_GET['upd_task'])) {
-        $task_done - $_GET['task_done'];
+        $task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
@@ -105,7 +105,7 @@
                                 <input type="checkbox" id="task_done" name="task_done" value="0"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <script>var tdon = document.getElementById("task_done").value;</script>
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=document.getElementById('task_done').value">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='document.getElementById('task_done').value'">Update</a>
                             </td>
                         </tr>
             <?php
