@@ -91,24 +91,39 @@
                 // select all tasks if page is visited or refreshed
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
 
-                $i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
+                $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
+                    //Print only "Open" tasks
+                    if ($row['task_done'] !== '1'){
+            ?>
                     <tr>
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>"<?php
-                                if($row['task_done'] == '1'){
-                                     echo " checked='checked'";
-                                }
-                                else {}
-                                echo "/>"
-                                ?>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
                     </tr>
+            <?php
+                }else if ($row['task_done'] == '1'){
+            ?>
+                    <tr style="width: 5%; text-align: center;">Completed Tasks</tr>
+                    <tr>
+                        <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
+                        <td class="task"> <?php echo $row['task']; ?> </td>
+                        <td class="Owner"> <?php echo $row['Owner']; ?> </td>
+                        <td class="Owner"> <?php echo $row['DoC']; ?> </td>
+                        <td class="delete"> 
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' />
+                            <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
+                        </td>
+                    </tr>
+            <?php
+                }
+            }
+            ?>
 		  <?php $i++; } ?>		
 		</tbody>
 	</table>
