@@ -1,5 +1,29 @@
 <?php 
-    session_start();
+    
+    $time = $_SERVER['REQUEST_TIME'];
+
+    /**
+    * for a 30 minute timeout, specified in seconds
+    */
+    $timeout_duration = 1800;
+
+    /**
+    * Here we look for the user's LAST_ACTIVITY timestamp. If
+    * it's set and indicates our $timeout_duration has passed,
+    * blow away any previous $_SESSION data and start a new one.
+    */
+    if (isset($_SESSION['LAST_ACTIVITY']) && 
+       ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+        session_unset();
+        session_destroy();
+        session_start();
+    }
+
+    /**
+    * Finally, update LAST_ACTIVITY so that our timeout
+    * is based on it and not the user's login time.
+    */
+    $_SESSION['LAST_ACTIVITY'] = $time;
     
     //See if the user is valid
     if (strcmp($_SESSION["user"], "auth") !== 0) {
@@ -103,13 +127,13 @@
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" value="0" onchange="f()"/>
-                                <?php
+                                <script>
                                     function f(){
                                         $tdon = document.getElementById("task_done");
                                     }
-                                ?>
+                                </script>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='" . $tdon . "'">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='" + tdon + "'">Update</a>
                             </td>
                         </tr>
             <?php
