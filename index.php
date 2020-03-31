@@ -102,9 +102,9 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" value="0" onchange="document.getElementById('task_done').value = this.checked ? 1 : 0"/>
+                                <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=document.getElementById('task_done').value">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $row['task_done']; ?>'">Update</a>
                             </td>
                         </tr>
             <?php
