@@ -46,7 +46,7 @@
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-//echo $_GET['task_done'];
+echo $_GET['task_done'];
     // Update task
 	if (isset($_GET['upd_task'])) {
         $task_done = $_GET['task_done'];
