@@ -115,12 +115,14 @@
                                         var tdon = document.getElementById("task_done").value;
                                         if (tdon == 0){
                                             tdon = 1;
+                                        }else{
+                                            tdon = 0;
                                         }
-                                        document.write(tdon);
+                                        //document.write(tdon);
                                     }
                                 </script>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='" + document.write(tdon); + "'">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=' + tdon + '">Update</a>
 <!--                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done= + tdon;return false;">Update</a>-->
                             </td>
                         </tr>
