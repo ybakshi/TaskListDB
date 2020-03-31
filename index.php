@@ -110,6 +110,7 @@
                     }
                     $i++;
                 }
+                        <tr style="width: 5%; text-align: center;">Completed Tasks</tr>
                 // select all tasks if page is visited or refreshed
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
             
@@ -117,7 +118,6 @@
                     //Print only "Completed" tasks
                     if ($row['task_done'] == '1'){
             ?>
-                    <tr style="width: 5%; text-align: center;">Completed Tasks</tr>
                     <tr>
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
                         <td class="task"> <?php echo $row['task']; ?> </td>
