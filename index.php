@@ -39,14 +39,14 @@
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-echo $_GET['task_done'];
+//echo $_GET['task_done'];
     // Update task
 	if (isset($_GET['upd_task'])) {
-        $task_done = $_GET['task_done'];
+        //$task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
-        mysqli_query($conn, "UPDATE tasks SET task_done='$task_done', DoC='$sqlDate' WHERE task=$updt_task");
+        mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC='$sqlDate' WHERE task=$updt_task");
         header('location: index.php');
 	}  
 
