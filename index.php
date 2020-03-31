@@ -1,5 +1,11 @@
 <?php 
-    
+
+    //See if the user is valid
+    if (strcmp($_SESSION["user"], "auth") !== 0) {
+        header("Location: login.php");
+        exit();
+    }
+
     $time = $_SERVER['REQUEST_TIME'];
 
     /**
@@ -25,12 +31,7 @@
     */
     $_SESSION['LAST_ACTIVITY'] = $time;
     
-    //See if the user is valid
-    if (strcmp($_SESSION["user"], "auth") !== 0) {
-        header("Location: login.php");
-        exit();
-    }
-        
+    
 	$errors = "";
 
 	// connect to database heroku DB
