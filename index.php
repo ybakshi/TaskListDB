@@ -112,7 +112,7 @@
                                 <input type="checkbox" id="task_done" name="task_done" value="0" onchange="f()"/>
                                 <script>
                                     function f(){
-                                        $tdon = document.getElementById("task_done");
+                                        var tdon = document.getElementById("task_done");
                                     }
                                 </script>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
