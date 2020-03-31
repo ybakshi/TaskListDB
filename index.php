@@ -93,7 +93,7 @@
 
                 $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
                     //Print only "Open" tasks
-                    if ($row['task_done'] !== '1'){
+                    if ($row['task_done'] != '1'){
             ?>
                     <tr>
                         <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
