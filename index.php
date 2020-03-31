@@ -116,7 +116,7 @@
                                     }
                                 </script>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='" + tdon + "'">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='" + tdon + "'"">Update</a>
                             </td>
                         </tr>
             <?php
