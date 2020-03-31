@@ -107,11 +107,11 @@
                             </td>
                         </tr>
             <?php
-                    }
+                    }else{}
                     $i++;
                 }
             ?>
-                        <tr style="width: 5%; text-align: center;">Completed Tasks</tr>
+                        <tr style="width: 5%; text-align: center;"><td>Completed Tasks</td></tr>
             <?php
                 // select all tasks if page is visited or refreshed
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
@@ -132,7 +132,7 @@
                         </td>
                     </tr>
                 <?php
-                    }
+                    }else{}
                 ?>
 		  <?php $i++; 
                 } 
