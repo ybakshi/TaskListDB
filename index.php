@@ -113,6 +113,9 @@
                                 <script>
                                     function f(){
                                         var tdon = document.getElementById("task_done").value;
+                                        if (tdon == 0){
+                                            tdon = 1;
+                                        }
                                         document.write(tdon);
                                     }
                                 </script>
