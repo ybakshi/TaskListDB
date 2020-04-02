@@ -113,7 +113,7 @@
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <?php
                                     function f(){
-                                        var tdon = document.getElementById("task_done");
+                                        $tdon = document.getElementById("task_done");
                                         if (tdon.checked == true){
                                             $_SESSION["tdon"] = "1";
                                         }else{
