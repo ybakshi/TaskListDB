@@ -46,7 +46,7 @@
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-    //echo $_GET['task_done'];
+    echo $_SESSION["checked"];
     // Update task
 	if (isset($_GET['upd_task'])) {
         $task_done = $_SESSION["checked"];
@@ -115,9 +115,9 @@
                                     function f(){
                                         var tdon = document.getElementById("task_done");
                                         if (tdon.checked == true){
-                                            $_SESSION["checked"] = "1";
+                                            $_SESSION["checked"] = 1;
                                         }else{
-                                            $_SESSION["checked"] = "0";
+                                            $_SESSION["checked"] = 0;
                                         }
                                     }
                                 </script>
