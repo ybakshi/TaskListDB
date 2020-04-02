@@ -116,17 +116,14 @@
                                         var tdon = document.getElementById("task_done").value;
                                         if (tdon == 0){
                                             tdon = 1;
-                                </script>
-                                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='1'">Update</a>
-                                <script>
+                                            document.write('<a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='+tdon+''>Update</a>');
                                         }else{
                                             tdon = 0;
-                                </script>
-                                         <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='0'">Update</a>
-                                <script>
+                                            document.write('<a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='+tdon+''>Update</a>');
                                         }
                                     }
                                 </script>
+                                <
                             </td>
                         </tr>
             <?php
