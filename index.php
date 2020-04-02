@@ -113,19 +113,19 @@
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <script>
                                     function f(){
-                                        alert("yoge in");
+//                                        alert("yoge in");
                                         var tdon = document.getElementById("task_done");
                                         if (tdon.checked == true){
                                             $_SESSION["checked"] = 1;
-                                            alert($_SESSION["checked"]);
+//                                            alert($_SESSION["checked"]);
                                         }else{
                                             $_SESSION["checked"] = 0;
-                                            alert($_SESSION["checked"]);
+//                                            alert($_SESSION["checked"]);
                                         }
-                                        alert("yoge out");
+//                                        alert("yoge out");
                                     }
                                 </script>
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a><?php echo $_SESSION["checked"]; ?>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
                 <?php
