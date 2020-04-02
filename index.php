@@ -121,7 +121,7 @@
                                         }
                                     }
                                 ?>
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $_SESSION["checked"] ?>'">Update</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
             <?php
