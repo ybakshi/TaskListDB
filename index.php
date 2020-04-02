@@ -49,7 +49,7 @@
     //echo $_GET['task_done'];
     // Update task
 	if (isset($_GET['upd_task'])) {
-        $task_done = $_SESSION['tdon'];
+        $task_done = $_SESSION["checked"];
         $updt_task = $_GET['upd_task'];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
@@ -115,13 +115,13 @@
                                     function f(){
                                         $tdon = document.getElementById("task_done");
                                         if (tdon.checked == true){
-                                            $_SESSION["tdon"] = "1";
+                                            $_SESSION["checked"] = "1";
                                         }else{
-                                            $_SESSION["tdon"] = "0";
+                                            $_SESSION["checked"] = "0";
                                         }
                                     }
                                 ?>
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $_SESSION["tdon"] ?>'">Update</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='<?php echo $_SESSION["checked"] ?>'">Update</a>
                             </td>
                         </tr>
             <?php
