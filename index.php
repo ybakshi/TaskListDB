@@ -124,8 +124,10 @@
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
-            <?php
+                <?php
                     }else{}
+                ?>        
+            <?php $i++;
                     $i++;
                 }
             ?>
