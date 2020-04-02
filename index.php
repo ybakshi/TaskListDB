@@ -110,20 +110,23 @@
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" value="0" onchange="f()"/>
+                                <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <script>
                                     function f(){
                                         var tdon = document.getElementById("task_done").value;
                                         if (tdon == 0){
                                             tdon = 1;
+                                </script>
+                                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=' + tdon + '">Update</a>
+                                <script>
                                         }else{
                                             tdon = 0;
+                                </script>
+                                         <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=' + tdon + '">Update</a>
+                                <script>
                                         }
-                                        //document.write(tdon);
                                     }
                                 </script>
-                                <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=' + tdon + '">Update</a>
-<!--                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done= + tdon;return false;">Update</a>-->
                             </td>
                         </tr>
             <?php
