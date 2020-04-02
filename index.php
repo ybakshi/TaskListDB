@@ -6,7 +6,7 @@
     /**
     * for a 30 minute timeout, specified in seconds
     */
-    $timeout_duration = 3600;
+    $timeout_duration = 7200;
     
     //See if the user is valid
     if (strcmp($_SESSION["user"], "auth") !== 0) {
