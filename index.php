@@ -109,12 +109,12 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" value="0" onchange="f()"/>
+                                <input type="checkbox" id="task_done" name="task_done" value="0" onclick="f()"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <script>
                                     function f(){
-                                        var tdon = document.getElementById("task_done").value;
-                                        if (tdon == 0){
+                                        var tdon = document.getElementById("task_done");
+                                        if (tdon.checked == true){
                                             tdon = 1;
                                         }else{
                                             tdon = 0;
