@@ -116,10 +116,10 @@
                                         var tdon = document.getElementById("task_done").value;
                                         if (tdon == 0){
                                             tdon = 1;
-                                            document.write('<a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='+tdon+'">Update</a>');
+                                            document.write("<a href=\"index.php?upd_task='<?php echo $row['task']; ?>'&task_done='"+tdon+"'\">Update</a>");
                                         }else{
                                             tdon = 0;
-                                            document.write('<a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='+tdon+'">Update</a>');
+                                            document.write("<a href=\"index.php?upd_task='<?php echo $row['task']; ?>'&task_done='"+tdon+"'\">Update</a>");
                                         }
                                     }
                                 </script>
