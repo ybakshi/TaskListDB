@@ -49,11 +49,11 @@
     //echo $_GET['task_done'];
     // Update task
 	if (isset($_GET['upd_task'])) {
-        //$task_done = $_GET['task_done'];
+        $task_done = $_GET['task_done'];
         $updt_task = $_GET['upd_task'];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
-        mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC='$sqlDate' WHERE task=$updt_task");
+        mysqli_query($conn, "UPDATE tasks SET task_done='$task_done', DoC='$sqlDate' WHERE task=$updt_task");
         header('location: index.php');
 	}  
 
@@ -117,12 +117,12 @@
                                         if (tdon == 0){
                                             tdon = 1;
                                 </script>
-                                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=' + tdon + '">Update</a>
+                                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='1'">Update</a>
                                 <script>
                                         }else{
                                             tdon = 0;
                                 </script>
-                                         <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done=' + tdon + '">Update</a>
+                                         <a href="index.php?upd_task='<?php echo $row['task']; ?>'&task_done='0'">Update</a>
                                 <script>
                                         }
                                     }
