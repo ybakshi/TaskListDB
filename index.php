@@ -116,12 +116,13 @@
                                         var tdon = document.getElementById("task_done");
                                         if (tdon.checked == true){
                                             $_SESSION["checked"] = 1;
+                                            alert($_SESSION["checked"]);
                                         }else{
                                             $_SESSION["checked"] = 0;
                                         }
                                     }
                                 </script>
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a><?php echo $_SESSION["checked"]; ?>
                             </td>
                         </tr>
                 <?php
