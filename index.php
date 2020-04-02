@@ -111,23 +111,21 @@
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" value="0" onclick="f()"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <?php
+                                <script>
                                     function f(){
-                                        $tdon = document.getElementById("task_done");
+                                        var tdon = document.getElementById("task_done");
                                         if (tdon.checked == true){
                                             $_SESSION["checked"] = "1";
                                         }else{
                                             $_SESSION["checked"] = "0";
                                         }
                                     }
-                                ?>
+                                </script>
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
                 <?php
                     }else{}
-                ?>        
-            <?php $i++;
                     $i++;
                 }
             ?>
@@ -153,8 +151,7 @@
                     </tr>
                 <?php
                     }else{}
-                ?>
-		  <?php $i++; 
+		          $i++; 
                 } 
           ?>		
 		</tbody>
