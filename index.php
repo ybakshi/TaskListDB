@@ -110,28 +110,24 @@
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" onclick="checkMe(this);"/>
-                                <script type="text/javascript">
+                                <?php
                                     function checkMe(cb){
-                                        alert("IN");
-                                        var checkBox = document.getElementById('task_done');
+                                        print "IN";
+                                        $checkBox = document.getElementById('task_done');
                                         if (checkBox.checked == true){
-                                            alert("IN IN");
+                                            print "IN IN";
                                             document.getElementById("task_done").checked = false;
-                                            checkBox.value = "0";
-                                            <%Session["checked"] = "'+ checkBox +'";%>              
-                                            var print = '<%= Session["checked"] %>';
-                                            alert(print);
+                                            $_SESSION["checked"] = "0";
+                                            print $_SESSION["checked"];
                                         }else{
-                                            alert("IN O");
+                                            print "IN O";
                                             document.getElementById("task_done").checked = true;
-                                            checkBox.value = "1";
-                                            <%Session["checked"] = "'+ checkBox +'";%>          
-                                            var print = <%= Session["checked"] %>;
-                                            alert(print);
+                                            $_SESSION["checked"] = "1";
+                                            print $_SESSION["checked"];
                                         }
-                                        alert("OUT");
+                                        print "OUT";
                                     }
-                                </script>
+                                ?>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
