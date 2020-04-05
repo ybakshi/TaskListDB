@@ -98,7 +98,7 @@
 			<?php 
                 // select all tasks if page is visited or refreshed
                 $tasks = mysqli_query($conn, "SELECT * FROM tasks");
-
+                $showUpd = 'none';
                 $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
                     //Print only "Open" tasks
                     if ($row['task_done'] == '0'){
@@ -109,9 +109,9 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; echo 'style="display:block"' ?>/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1";$showUpd='block'; ?>"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'" style="display:none">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'" style="display:<?php echo $showUpd;?>">Update</a>
                             </td>
                         </tr>
             <?php
