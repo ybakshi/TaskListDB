@@ -110,22 +110,22 @@
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" onclick="checkMe(this);"/>
-                                <script>
+                                <script type="text/javascript">
                                     function checkMe(cb){
                                         alert("IN");
                                         var checkBox = document.getElementById('task_done');
                                         if (checkBox.checked == true){
                                             alert("IN IN");
-                                            //document.getElementById("task_done").checked = false;
+                                            document.getElementById("task_done").checked = false;
                                             checkBox.value = "0";
-                                            //<%Session["checked"] = "'+ checkBox +'";%>              
-                                            //alert('<%=Session["checked"]%>');
+                                            '<%Session["checked"] = "'+ checkBox +'";%>';              
+                                            alert('<%=Session["checked"]%>');
                                         }else{
                                             alert("IN O");
-                                            //document.getElementById("task_done").checked = true;
+                                            document.getElementById("task_done").checked = true;
                                             checkBox.value = "1";
-                                            //<%Session["checked"] = "'+ checkBox +'";%>              
-                                            //alert('<%=Session["checked"]%>');
+                                            '<%Session["checked"] = "'+ checkBox +'";%>;'             
+                                            alert('<%=Session["checked"]%>');
                                         }
                                         alert("OUT");
                                     }
