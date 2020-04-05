@@ -113,7 +113,7 @@
                                 <script>
                                     function check(){
                                         alert("IN");
-                                        var checkBox = document.getElementById("task_done")
+                                        var checkBox = document.getElementById("task_done");
                                         if (checkBox.checked == true){
                                             alert("IN IN");
                                             sessionStorage.setItem("checked","1");
