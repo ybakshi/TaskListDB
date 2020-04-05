@@ -109,11 +109,12 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" value="0" onclick="check(this);"/>
+                                <input type="checkbox" id="task_done" name="task_done" value="0" onclick="check();"/>
                                 <script>
-                                    function check(cb){
+                                    function check(){
                                         alert("IN");
-                                        if (cb.is(':checked')){
+                                        var checkBox = document.getElementById("task_done")
+                                        if (checkBox.checked == true){
                                             alert("IN IN");
                                             sessionStorage.setItem("checked","1");
                                         }else{
