@@ -109,9 +109,9 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="alert("HI");"/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="checkMe();"/>
                                 <script>
-                                    function check(){
+                                    function checkMe(){
                                         alert("IN");
                                         var checkBox = document.getElementById('task_done');
                                         if (checkBox.checked == true){
