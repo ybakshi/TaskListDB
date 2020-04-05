@@ -111,27 +111,27 @@
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" onclick="checkMe(this);"/>
                                 <script>
-                                    function checkMe(){
+                                    function checkMe(cb){
                                         alert("IN");
                                         var checkBox = document.getElementById('task_done');
                                         if (checkBox.checked == true){
                                             alert("IN IN");
                                             //document.getElementById("task_done").checked = false;
-                                            checkBox = "0";
-                                            <%Session["checked"] = "'+ checkBox +'";%>              
-                                            alert('<%=Session["checked"]%>');
+                                            checkBox.value = "0";
+                                            //<%Session["checked"] = "'+ checkBox +'";%>              
+                                            //alert('<%=Session["checked"]%>');
                                         }else{
                                             alert("IN O");
                                             //document.getElementById("task_done").checked = true;
-                                            var checkBox = "1";
-                                            <%Session["checked"] = "'+ checkBox +'";%>              
-                                            alert('<%=Session["checked"]%>');
+                                            checkBox.value = "1";
+                                            //<%Session["checked"] = "'+ checkBox +'";%>              
+                                            //alert('<%=Session["checked"]%>');
                                         }
                                         alert("OUT");
                                     }
                                 </script>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
                 <?php
