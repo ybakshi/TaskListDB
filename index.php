@@ -119,13 +119,15 @@
                                             document.getElementById("task_done").checked = false;
                                             checkBox.value = "0";
                                             '<%Session["checked"] = "'+ checkBox +'";%>';              
-                                            alert('<%=Session["checked"]%>');
+                                            var print = '<%= Session["checked"] %>';
+                                            alert(print);
                                         }else{
                                             alert("IN O");
                                             document.getElementById("task_done").checked = true;
                                             checkBox.value = "1";
                                             '<%Session["checked"] = "'+ checkBox +'";%>;'             
-                                            alert('<%=Session["checked"]%>');
+                                            var print = '<%= Session["checked"] %>';
+                                            alert(print);
                                         }
                                         alert("OUT");
                                     }
