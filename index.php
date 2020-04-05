@@ -117,11 +117,15 @@
                                         if (checkBox.checked == true){
                                             alert("IN IN");
                                             document.getElementById("task_done").checked = false;
-                                            sessionStorage.setItem("checked","0");
+                                            var checked = "0";
+                                            <%Session["checked"] = "'+ checked +'";%>              
+                                            alert('<%=Session["checked"]%>');
                                         }else{
                                             alert("IN O");
                                             document.getElementById("task_done").checked = true;
-                                            sessionStorage.setItem("checked","1");
+                                            var checked = "1";
+                                            <%Session["checked"] = "'+ checked +'";%>              
+                                            alert('<%=Session["checked"]%>');
                                         }
                                         alert("OUT");
                                     }
