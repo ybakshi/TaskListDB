@@ -109,9 +109,9 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1";$showUpd='block'; ?>"/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; ?>"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'" style="display:<?php echo $showUpd;?>">Update</a>
+                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
             <?php
@@ -134,7 +134,7 @@
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php $_SESSION["checked"]="0"; echo $_SESSION["checked"]; ?>"/>
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php $_SESSION["checked"]="0"; ?>"/>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
