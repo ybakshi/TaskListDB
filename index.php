@@ -109,7 +109,7 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php if($(this).prop("checked") != true){$_SESSION["checked"]="1";}else{$_SESSION["checked"]="0";} echo $_SESSION["checked"]; ?>"/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php if($(this).is(":checked") != true){$_SESSION["checked"]="1";}else{$_SESSION["checked"]="0";} echo $_SESSION["checked"]; ?>"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
@@ -134,7 +134,7 @@
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php if($(this).prop("checked") == true){$_SESSION["checked"]="0";}else{$_SESSION["checked"]="1";} echo $_SESSION["checked"]; ?>"/>
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php if($(this).is(":checked") == true){$_SESSION["checked"]="0";}else{$_SESSION["checked"]="1";} echo $_SESSION["checked"]; ?>"/>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
