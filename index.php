@@ -50,7 +50,7 @@
     // Update task
 	if (isset($_GET['upd_task'])) {
         $updt_task = $_GET['upd_task'];
-        $task_done = '1';
+        $task_done = $_SESSION["checked"];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
         mysqli_query($conn, "UPDATE tasks SET task_done='$task_done', DoC='$sqlDate' WHERE task=$updt_task");
@@ -109,29 +109,7 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="checkMe(this);"/>
-                                <?php
-                                    function checkMe(cb)
-                                    {
-                                        print "IN";
-                                        $checkBox = document.getElementById('task_done');
-                                        if (checkBox.checked == true)
-                                        {
-                                            print "IN IN";
-                                            document.getElementById("task_done").checked = false;
-                                            $_SESSION["checked"] = "0";
-                                            print $_SESSION["checked"];
-                                        }
-                                        else
-                                        {
-                                            print "IN O";
-                                            document.getElementById("task_done").checked = true;
-                                            $_SESSION["checked"] = "1";
-                                            print $_SESSION["checked"];
-                                        }
-                                        print "OUT";
-                                    }
-                                ?>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION{["checked"]="1" ;print $_SESSION{["checked"]; ?>"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
