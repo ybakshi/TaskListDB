@@ -113,16 +113,16 @@
                                 <script>
                                     function check(){
                                         alert("IN");
-                                        var checkBox = document.getElementById("task_done");
+                                        var checkBox = document.getElementById('task_done');
                                         if (checkBox.checked == true){
                                             alert("IN IN");
-                                            document.getElementById("task_done").checked = false;
+                                            //document.getElementById("task_done").checked = false;
                                             checkBox = "0";
                                             <%Session["checked"] = "'+ checkBox +'";%>              
                                             alert('<%=Session["checked"]%>');
                                         }else{
                                             alert("IN O");
-                                            document.getElementById("task_done").checked = true;
+                                            //document.getElementById("task_done").checked = true;
                                             var checkBox = "1";
                                             <%Session["checked"] = "'+ checkBox +'";%>              
                                             alert('<%=Session["checked"]%>');
