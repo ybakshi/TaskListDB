@@ -49,7 +49,7 @@
     
     // Update task
 	if (isset($_GET['upd_task'])) {
-        $task_done = $_SESSION["checked"];
+        $task_done = '1'//$_SESSION["checked"];
         $updt_task = $_GET['upd_task'];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
