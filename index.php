@@ -110,20 +110,20 @@
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" value="0" onclick="check(this);"/>
-                                <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <?php
+                                <script>
                                     function check(cb){
-                                        alert("yoge in");
-                                        if($(cb).is(":checked")){
-                                            $_SESSION["checked"] = 1;
-                                            alert($_SESSION["checked"]);
+                                        alert("IN");
+                                        if (cb.is(':checked')){
+                                            alert("IN IN");
+                                            sessionStorage.setItem("checked","1");
                                         }else{
-                                            $_SESSION["checked"] = 0;
-                                            alert($_SESSION["checked"]);
+                                            alert("IN O");
+                                            sessionStorage.setItem("checked","0");
                                         }
-                                        alert("yoge out");
+                                        alert("OUT");
                                     }
-                                ?>
+                                </script>
+                                <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
