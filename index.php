@@ -111,15 +111,19 @@
                             <td class="delete"> 
                                 <input type="checkbox" id="task_done" name="task_done" onclick="checkMe(this);"/>
                                 <?php
-                                    function checkMe(cb){
+                                    function checkMe(cb)
+                                    {
                                         print "IN";
                                         $checkBox = document.getElementById('task_done');
-                                        if (checkBox.checked == true){
+                                        if (checkBox.checked == true)
+                                        {
                                             print "IN IN";
                                             document.getElementById("task_done").checked = false;
                                             $_SESSION["checked"] = "0";
                                             print $_SESSION["checked"];
-                                        }else{
+                                        }
+                                        else
+                                        {
                                             print "IN O";
                                             document.getElementById("task_done").checked = true;
                                             $_SESSION["checked"] = "1";
