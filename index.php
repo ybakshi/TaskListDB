@@ -50,7 +50,7 @@
     // Update task
 	if (isset($_GET['upd_task'])) {
         $updt_task = $_GET['upd_task'];
-        $task_done = '1';//$_SESSION["checked"];
+        $task_done = '1';
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
         mysqli_query($conn, "UPDATE tasks SET task_done='$task_done', DoC='$sqlDate' WHERE task=$updt_task");
@@ -109,7 +109,7 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="checkMe()"/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="checkMe(this);"/>
                                 <script>
                                     function checkMe(){
                                         alert("IN");
