@@ -109,12 +109,12 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; print $_SESSION["checked"]; ?>"/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php if(this.checked != true){$_SESSION["checked"]="1";}else{$_SESSION["checked"]="0";} ?>"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
-                <?php
+            <?php
                     }else{}
                     $i++;
                 }
@@ -134,16 +134,16 @@
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' />
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php if(this.checked == true){$_SESSION["checked"]="0";}else{$_SESSION["checked"]="1";} ?>"/>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
-<!--                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>-->
+                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
                     </tr>
-                <?php
+            <?php
                     }else{}
 		          $i++; 
                 } 
-          ?>		
+            ?>		
 		</tbody>
 	</table>
 </body>
