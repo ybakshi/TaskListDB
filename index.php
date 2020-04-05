@@ -109,22 +109,25 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" value="0" onclick="f()"/>
+                                <input type="checkbox" id="task_done" name="task_done" value="0" onclick="check(this);"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <script>
-                                    function f(){
-//                                        alert("yoge in");
-                                        var tdon = document.getElementById("task_done");
-                                        if (tdon.checked == true){
-                                            $_SESSION["checked"] = 1;
-//                                            alert($_SESSION["checked"]);
-                                        }else{
-                                            $_SESSION["checked"] = 0;
-//                                            alert($_SESSION["checked"]);
+                                <?php
+                                    function check(cb){
+                                        alert("yoge in");
+                                        function check(cb)
+                                        {
+                                            if($(cb).is(":checked"))
+                                            {
+                                                $_SESSION["checked"] = 1;
+                                                alert($_SESSION["checked"]);
+                                            }else{
+                                                $_SESSION["checked"] = 0;
+                                                alert($_SESSION["checked"]);
+                                            }
+                                            alert("yoge out");
                                         }
-//                                        alert("yoge out");
                                     }
-                                </script>
+                                ?>
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                             </td>
                         </tr>
