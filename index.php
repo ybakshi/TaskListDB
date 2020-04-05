@@ -112,20 +112,18 @@
                                 <input type="checkbox" id="task_done" name="task_done" value="0" onclick="check(this);"/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <?php
-                                    function check(cb){
+                                    function check(cb)
+                                    {
                                         alert("yoge in");
-                                        function check(cb)
+                                        if($(cb).is(":checked"))
                                         {
-                                            if($(cb).is(":checked"))
-                                            {
-                                                $_SESSION["checked"] = 1;
-                                                alert($_SESSION["checked"]);
-                                            }else{
-                                                $_SESSION["checked"] = 0;
-                                                alert($_SESSION["checked"]);
-                                            }
-                                            alert("yoge out");
+                                            $_SESSION["checked"] = 1;
+                                            alert($_SESSION["checked"]);
+                                        }else{
+                                            $_SESSION["checked"] = 0;
+                                            alert($_SESSION["checked"]);
                                         }
+                                        alert("yoge out");
                                     }
                                 ?>
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
