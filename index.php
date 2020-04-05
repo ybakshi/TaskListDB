@@ -46,7 +46,7 @@
 		mysqli_query($conn, "DELETE FROM tasks WHERE task=".$id);
         header('location: index.php');
 	}
-    echo $_SESSION["checked"];
+    
     // Update task
 	if (isset($_GET['upd_task'])) {
         $task_done = $_SESSION["checked"];
@@ -117,14 +117,14 @@
                                         if (checkBox.checked == true){
                                             alert("IN IN");
                                             document.getElementById("task_done").checked = false;
-                                            var checked = "0";
-                                            <%Session["checked"] = "'+ checked +'";%>              
+                                            checkBox = "0";
+                                            <%Session["checked"] = "'+ checkBox +'";%>              
                                             alert('<%=Session["checked"]%>');
                                         }else{
                                             alert("IN O");
                                             document.getElementById("task_done").checked = true;
-                                            var checked = "1";
-                                            <%Session["checked"] = "'+ checked +'";%>              
+                                            var checkBox = "1";
+                                            <%Session["checked"] = "'+ checkBox +'";%>              
                                             alert('<%=Session["checked"]%>');
                                         }
                                         alert("OUT");
