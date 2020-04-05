@@ -116,10 +116,12 @@
                                         var checkBox = document.getElementById("task_done");
                                         if (checkBox.checked == true){
                                             alert("IN IN");
-                                            sessionStorage.setItem("checked","1");
+                                            document.getElementById("task_done").checked = false;
+                                            sessionStorage.setItem("checked","0");
                                         }else{
                                             alert("IN O");
-                                            sessionStorage.setItem("checked","0");
+                                            document.getElementById("task_done").checked = true;
+                                            sessionStorage.setItem("checked","1");
                                         }
                                         alert("OUT");
                                     }
