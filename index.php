@@ -109,7 +109,7 @@
                             <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                             <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                             <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; echo $_SESSION["checked"]; ?>" <?php echo 'style="display:block"' ?>/>
+                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; echo 'style="display:block"' ?>/>
                                 <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
                                 <a href="index.php?upd_task='<?php echo $row['task']; ?>'" style="display:none">Update</a>
                             </td>
