@@ -53,7 +53,7 @@
         $task_done = $_SESSION["checked"];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
-        mysqli_query($conn, "UPDATE tasks SET task_done='$task_done', DoC='$sqlDate' WHERE task=$updt_task");
+        mysqli_query($conn, "UPDATE tasks SET task_done='1', DoC='$sqlDate' WHERE task=$updt_task");
         header('location: index.php');
 	}  
 
