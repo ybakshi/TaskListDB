@@ -49,8 +49,8 @@
     
     // Update task
 	if (isset($_GET['upd_task'])) {
-        $task_done = '1'//$_SESSION["checked"];
         $updt_task = $_GET['upd_task'];
+        $task_done = '1';//$_SESSION["checked"];
         $todaydate = date("Y-m-d");
         $sqlDate = date('Y-m-d', strtotime($todaydate));
         mysqli_query($conn, "UPDATE tasks SET task_done='$task_done', DoC='$sqlDate' WHERE task=$updt_task");
