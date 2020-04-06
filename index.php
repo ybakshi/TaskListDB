@@ -134,7 +134,7 @@
                         <td class="Owner"> <?php echo $row['Owner']; ?> </td>
                         <td class="Owner"> <?php echo $row['DoC']; ?> </td>
                         <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php $_SESSION["checked"]="0"; ?>"/>
+                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php $_SESSION["checked"]="0"; echo " style='visibility:none'" ?>"/>
                             <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
                             <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
                         </td>
