@@ -71,80 +71,84 @@
 	<div class="heading">
 		<h2 style="font-style: 'Hervetica';">Welcome to Brainizen Task List Board!</h2>
 	</div>
-
-	<form method="post" action="index.php" class="input_form" style="align-content: center;">
-		<?php if (isset($errors)) { ?>
-			<p><?php echo $errors; ?></p>
-		<?php } ?>
-		<label for="task_label">Task:</label>
-        <input type="text" name="task" class="task_input">
-        <label for="Owner_label">Owner:</label>
-        <input type="text" name="Owner" class="Owner_input">
-		<button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
-	</form>
-
-	<table>
-		<thead>
-			<tr>
-				<th style="width: 5%; text-align: left;">N</th>
-				<th style="width: 55%; text-align: left;">Tasks</th>
-                <th style="width: 10%; text-align: left;">Owner</th>
-                <th style="width: 10%; text-align: left;">DoC</th>
-				<th style="width: 20%; text-align: center;">Action</th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<?php 
-                // select all tasks if page is visited or refreshed
-                $tasks = mysqli_query($conn, "SELECT * FROM tasks");
-                $showUpd = 'none';
-                $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
-                    //Print only "Open" tasks
-                    if ($row['task_done'] == '0'){
-            ?>
-                        <tr>
-                            <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
-                            <td class="task"> <?php echo $row['task']; ?> </td>
-                            <td class="Owner"> <?php echo $row['Owner']; ?> </td>
-                            <td class="Owner"> <?php echo $row['DoC']; ?> </td>
-                            <td class="delete"> 
-                                <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; ?>"/>
-                                <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
-                                <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
-                            </td>
-                        </tr>
-            <?php
-                    }else{}
-                    $i++;
-                }
-            ?>
-                        <tr style="width: 5%; text-align: center;"><td colspan="5" style="font-size: 19px; color: #6B8E23;"><b>Completed Tasks</b></td></tr>
-            <?php
-                // select all tasks if page is visited or refreshed
-                $tasks = mysqli_query($conn, "SELECT * FROM tasks");
-            
-                $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
-                    //Print only "Completed" tasks
-                    if ($row['task_done'] == '1'){
-            ?>
+    <div>
+        <div style="align-content: center;">
+            <form method="post" action="index.php" class="input_form" style="align-content: center;">
+                <?php if (isset($errors)) { ?>
+                    <p><?php echo $errors; ?></p>
+                <?php } ?>
+                <label for="task_label">Task:</label>
+                <input type="text" name="task" class="task_input">
+                <label for="Owner_label">Owner:</label>
+                <input type="text" name="Owner" class="Owner_input">
+                <button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
+            </form>
+        </div>
+        <div>
+            <table>
+                <thead>
                     <tr>
-                        <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
-                        <td class="task"> <?php echo $row['task']; ?> </td>
-                        <td class="Owner"> <?php echo $row['Owner']; ?> </td>
-                        <td class="Owner"> <?php echo $row['DoC']; ?> </td>
-                        <td class="delete"> 
-                            <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php $_SESSION["checked"]="0"; echo " style='visibility:none'" ?>"/>
-                            <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
-                            <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
-                        </td>
+                        <th style="width: 5%; text-align: left;">N</th>
+                        <th style="width: 55%; text-align: left;">Tasks</th>
+                        <th style="width: 10%; text-align: left;">Owner</th>
+                        <th style="width: 10%; text-align: left;">DoC</th>
+                        <th style="width: 20%; text-align: center;">Action</th>
                     </tr>
-            <?php
-                    }else{}
-		          $i++; 
-                } 
-            ?>		
-		</tbody>
-	</table>
+                </thead>
+
+                <tbody>
+                    <?php 
+                        // select all tasks if page is visited or refreshed
+                        $tasks = mysqli_query($conn, "SELECT * FROM tasks");
+                        $showUpd = 'none';
+                        $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
+                            //Print only "Open" tasks
+                            if ($row['task_done'] == '0'){
+                    ?>
+                                <tr>
+                                    <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
+                                    <td class="task"> <?php echo $row['task']; ?> </td>
+                                    <td class="Owner"> <?php echo $row['Owner']; ?> </td>
+                                    <td class="Owner"> <?php echo $row['DoC']; ?> </td>
+                                    <td class="delete"> 
+                                        <input type="checkbox" id="task_done" name="task_done" onclick="<?php $_SESSION["checked"]="1"; ?>"/>
+                                        <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a> 
+                                        <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
+                                    </td>
+                                </tr>
+                    <?php
+                            }else{}
+                            $i++;
+                        }
+                    ?>
+                                <tr style="width: 5%; text-align: center;"><td colspan="5" style="font-size: 19px; color: #6B8E23;"><b>Completed Tasks</b></td></tr>
+                    <?php
+                        // select all tasks if page is visited or refreshed
+                        $tasks = mysqli_query($conn, "SELECT * FROM tasks");
+
+                        $i = 1; while ($row = mysqli_fetch_array($tasks)) { 
+                            //Print only "Completed" tasks
+                            if ($row['task_done'] == '1'){
+                    ?>
+                            <tr>
+                                <td style="width: 10%; text-align: left;"> <?php echo $i; ?> </td>
+                                <td class="task"> <?php echo $row['task']; ?> </td>
+                                <td class="Owner"> <?php echo $row['Owner']; ?> </td>
+                                <td class="Owner"> <?php echo $row['DoC']; ?> </td>
+                                <td class="delete"> 
+                                    <input type="checkbox" id="task_done" name="task_done" value="<?php echo $row['task_done']; ?>" checked='checked' onclick="<?php $_SESSION["checked"]="0"; echo " style='visibility:none'" ?>"/>
+                                    <a href="index.php?del_task='<?php echo $row['task']; ?>'">x</a>
+                                    <a href="index.php?upd_task='<?php echo $row['task']; ?>'">Update</a>
+                                </td>
+                            </tr>
+                    <?php
+                            }else{}
+                          $i++; 
+                        } 
+                    ?>		
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
