@@ -1,5 +1,10 @@
 <?php
 session_start();
+ /**
+    * for a 30 minute timeout, specified in seconds
+    */
+$timeout_duration = 6000;
+
 $message="";
 
 // connect to database heroku DB
